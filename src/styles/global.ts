@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
         --black: #000000;
         --blue-dark: #0a0f19;
         --blue-darksky: #5E6D8C;
+        --gradient: linear-gradient(to right, var(--blue), var(--yellow));
 
         //Fonts
         --font-family-title: "Pokemon Solid", sans-serif;
