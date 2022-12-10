@@ -86,6 +86,5 @@ export const ContentSubscribe = styled.div`
     }
 `
 export const Pokeball = styled.div`
-    margin: 10px 20px 0 0;
     cursor: pointer;
 `

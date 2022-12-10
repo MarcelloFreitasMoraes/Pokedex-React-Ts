@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className='container'>
       <Head>
-        <title>Pokedex</title>
+        <title>Home | Pokedex</title>
       </Head>
       {/* <LogoComponent /> */}
       <S.Main>
@@ -21,7 +21,8 @@ export default function Home() {
             <TypographicComponent title="Poke Api" large />
 
             <TypographicComponent title="Produced 100% by Marcelo Moraes. Login and have fun in the world
-              of pokemon" description />            
+              of Pokemon." description /> 
+            <TypographicComponent title="Click on the Pokeball to continue..." description />            
           </div>
         </S.GroupLeft>
 
