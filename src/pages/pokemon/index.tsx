@@ -1,21 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
-//import { LogoComponent } from '../global/components/Logo'
-import * as S from "../../src/styles/styles.home"
-import { TypographicComponent } from '../global/components/Typographic';
+import { LogoComponent } from '../../global/components/Logo'
+import * as S from "./styles"
 import ash from "../global/assets/ash.png";
 import pokeball from "../global/assets/pokebola.png";
-import router from 'next/router';
+import { TypographicComponent } from '../../global/components/Typographic'
 
-export default function Home() {
+export default function Pokemon() {
   return (
     <div className='container'>
       <Head>
-        <title>Pokedex</title>
+        <title>Pokedex All Pokemons</title>
       </Head>
       {/* <LogoComponent /> */}
       <S.Main>
-      <S.GroupLeft>
+      {/* <S.GroupLeft>
           <div>
             <TypographicComponent title="For test next js" small />
             <TypographicComponent title="Poke Api" large />
@@ -30,10 +29,9 @@ export default function Home() {
             <Image src={ash} width={425} height={425} alt="Ash" />
           </div>          
         </S.GroupRight>
-        <S.Pokeball onClick={() => {router.push('/pokemon');
-            }}>
+        <S.Pokeball>
         <Image src={pokeball} width={100} height={100} alt="Poke Ball" />
-        </S.Pokeball>
+        </S.Pokeball> */}
         </S.Main>
     </div>
   )
