@@ -6,11 +6,11 @@ margin: 0 auto;
 `
 export const Content = styled.section`
   position: fixed;
-  background-image: url('https://cdn.icon-icons.com/icons2/851/PNG/512/Master_Ball_icon-icons.com_67545.png');
+  background-image: url('/MasterBall.png');
   background-repeat: no-repeat;
   display: flex;
   flex-direction: row;
-  top: 230px;
+  top: 110px;
   left: 30%;
   width: 700px;
   height: 600px;
@@ -106,6 +106,10 @@ export const Typography = styled.div`
   border-radius: 20px;
   text-transform: capitalize;
   background-color: white;
+
+  p{
+    color: var(--ligth);
+  }
   @media (max-width: 600px) {
     width: 80%;
     display: flex;

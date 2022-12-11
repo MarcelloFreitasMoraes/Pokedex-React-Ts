@@ -45,6 +45,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     p {
         font-family: var(--font-family-text);
+        color: var(--light);
     }
     a {
         color: inherit;
