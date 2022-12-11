@@ -5,7 +5,7 @@ import { LogoImage } from "./styles";
 export function LogoComponent() {
   return (
     <Link href="/" passHref>
-      <LogoImage src={Logo} alt="Pokemon" width={300} height={160} />
+      <LogoImage src={Logo} alt="Pokemon" width={150} height={80} />
     </Link>
   )
 }

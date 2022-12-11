@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-//import { LogoComponent } from '../global/components/Logo'
 import * as S from "../../src/styles/styles.home"
 import { TypographicComponent } from '../global/components/Typographic';
 import ash from "../global/assets/ash.png";
@@ -13,7 +12,6 @@ export default function Home() {
       <Head>
         <title>Home | Pokedex</title>
       </Head>
-      {/* <LogoComponent /> */}
       <S.Main>
       <S.GroupLeft>
           <div>

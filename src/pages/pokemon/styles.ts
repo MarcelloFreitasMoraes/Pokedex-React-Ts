@@ -1,33 +1,14 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
-    display: flex;
-`
-
 export const GroupLeft = styled.section`
-    height: calc(100vh - 3rem);
-    flex: 1;
-
-    background: var(--gradient);
-
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 50px 0;
 
     > div {
         max-width: 350px;
-        width: 100%;
-
-        h4 {
-            color: white;
-            
-            text-transform: uppercase;
-
-            font-weight: 900;
-
-            margin: 1rem 0;
-        }
-
+        width: 100%;     
 
         h1 {
             color: white;
@@ -39,53 +20,26 @@ export const GroupLeft = styled.section`
             text-transform: uppercase;
 
             margin-bottom: 1rem;
-        }
+        }      
+    }`
 
-        p {
-            font-size: 18px;
-            color: white;
-
-            margin-bottom: 1rem;
-        }
-    }
-
-
-    @media (max-width: 768px) {
-        > div {
-            max-width: 100%;
-
-            padding: 0 2rem;
-        }
-    }
+export const PokeLogo = styled.img`
+      width: 15rem;
+    margin-top: -8.5rem;
 `
-
-export const GroupRight = styled.section`
-    position: relative;
-
-    height: calc(100vh - 3rem);
-    flex: 1;
+export const Pokeball = styled.img`
+     height: 2rem;
+    margin-right: 0.25rem;
+    animation: bounce 0.3s linear infinite alternate;
+`
+export const Page = styled.div`
+       display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 85%;
+    margin: 0 auto;
+`
+export const Modal = styled.div`
     display: flex;
-    align-items: center;
-
-    background-color: var(--blue-dark);
-    box-shadow: -10px 3px 15px rgba(0,0,0,0.5);
-
-    div {
-        position: absolute;
-        left: -70px;
-    }
-
-    @media (max-width: 768px) {
-        display: none;
-    }
-`
-
-export const ContentSubscribe = styled.div`
-    div {
-        margin-top: 1rem;
-    }
-`
-export const Pokeball = styled.div`
-    margin: 10px 20px 0 0;
-    cursor: pointer;
+    justify-content: space-around;
 `
