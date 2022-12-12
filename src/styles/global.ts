@@ -11,6 +11,26 @@ export const GlobalStyle = createGlobalStyle`
         --blue-dark: #0a0f19;
         --blue-darksky: #5E6D8C;
         --gradient: linear-gradient(to right, var(--blue), var(--yellow));
+        --bg-poke-color-dark-normal: #a5a5a5    ;
+  --bg-poke-color-dark-fighting: rgba(221, 88, 88, 0.835);
+  --bg-poke-color-dark-flying: rgba(175, 100, 225, 0.667);
+  --bg-poke-color-dark-poison: rgba(165, 92, 205, 0.835);
+  --bg-poke-color-dark-ground: rgba(235, 207, 142, 0.511);
+  --bg-poke-color-dark-rock: rgba(203, 140, 95, 0.749);
+  --bg-poke-color-dark-bug: #aedf78;
+  --bg-poke-color-dark-ghost: rgba(203, 142, 235, 0.835);
+  --bg-poke-color-dark-steel: rgba(145, 148, 146, 0.835);
+  --bg-poke-color-dark-fire: #e95c4d;
+  --bg-poke-color-dark-water: #43ccff;
+  --bg-poke-color-dark-grass: #00ca91;
+  --bg-poke-color-dark-electric: rgba(235, 230, 142, 0.835);
+  --bg-poke-color-dark-psychic: #8a0532;
+  --bg-poke-color-dark-ice: rgba(142, 235, 234, 0.835);
+  --bg-poke-color-dark-dragon: rgba(149, 95, 203, 0.831);
+  --bg-poke-color-dark-dark: rgba(148, 147, 144, 0.928);
+  --bg-poke-color-dark-fairy: #f87ea7;
+  --bg-poke-color-dark-unknown: rgba(247, 243, 233, 0.928);
+  --bg-poke-color-dark-shadow: rgba(247, 233, 243, 0.928);
 
         //Fonts
         --font-family-title: "Pokemon Solid", sans-serif;

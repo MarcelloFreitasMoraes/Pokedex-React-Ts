@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as S from './styles.card'
+//import {searchIcon} from '../../utils/icons'
 import axios from "axios";
 
 export default function Card({ data }:any) {
@@ -21,30 +22,31 @@ export default function Card({ data }:any) {
 
     const typePower = (Background: any) => {
         switch (Background) {
-            case 'fire': return '#940005';
-            case 'water': return '#00b3ff';
-            case 'grass': return '#56ab01';
-            case 'bug': return '#256a21';
-            case 'dragon': return '#753b3b';
-            case 'electric': return '#ffdd00';
-            case 'dark': return '#000000';
-            case 'flying': return '#9dbecb';
-            case 'normal': return '#c0517a';
-            case 'fighting': return '#8bdee8';
-            case 'rock': return '#474747';
-            case 'ice': return '#6b6868';
-            case 'steel': return '#474747';
-            case 'poison': return '#64047f';
-            case 'ghost': return '#320032';
-            case 'psychic': return '#84820e';
-            case 'ground': return '#9f6411';
-            case 'fairy': return '#c0517a'
+            case 'fire': return 'var(--bg-poke-color-dark-fire)';
+            case 'water': return 'var(--bg-poke-color-dark-water)';
+            case 'grass': return 'var(--bg-poke-color-dark-grass)';
+            case 'bug': return 'var(--bg-poke-color-dark-grass)';
+            case 'dragon': return 'var(--bg-poke-color-dark-dragon)';
+            case 'electric': return 'var(--bg-poke-color-dark-electric)';
+            case 'dark': return 'var(--bg-poke-color-dark-dark)';
+            case 'flying': return 'var(--bg-poke-color-dark-flying)';
+            case 'normal': return 'var(--bg-poke-color-dark-normal)';
+            case 'fighting': return 'var(--bg-poke-color-dark-fighting)';
+            case 'rock': return 'var(--bg-poke-color-dark-rock)';
+            case 'ice': return 'var( --bg-poke-color-dark-ice)';
+            case 'steel': return 'var(--bg-poke-color-dark-steel)';
+            case 'poison': return 'var(--bg-poke-color-dark-poison)';
+            case 'ghost': return 'var(--bg-poke-color-dark-ghost)';
+            case 'psychic': return 'var(--bg-poke-color-dark-psychic)';
+            case 'ground': return 'var(--bg-poke-color-dark-ground)';
+            case 'fairy': return 'var(--bg-poke-color-dark-fairy)'
             default: '#98bbb7'
         }        
     };
+   
     return (
         <>
-            <S.Card cor={typePower(call && call?.types && call?.types[0]?.type?.name)} >
+            <S.Card cor={(typePower(call && call?.types && call?.types[0]?.type?.name))} >
                 <S.Name>{call?.name}</S.Name>
                 <S.WidImg>
                 <S.Image src={call?.sprites.other["official-artwork"].front_default} />

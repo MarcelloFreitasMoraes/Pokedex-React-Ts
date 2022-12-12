@@ -6,15 +6,14 @@ import { IConditionProps } from "./Input/type";
 
 import { Form } from "./styles";
 
-export function FormComponent({ isSearch, isSend }: IConditionProps) {
-  const [hero, setHero] = useState("");
-  const [namePerson, setNamePerson] = useState();
+export function FormComponent({ isSearch }: IConditionProps) {
+  const [pokemon, setPokemon] = useState();
   const router = useRouter();
 
   const onSubmitSearch = (event: FormEvent) => {
     event.preventDefault()
 
-    router.push(`/Heroes?name=${namePerson}`);
+    router.push(`/pokemon?name=${pokemon}`);
   }
 
 
@@ -23,13 +22,13 @@ export function FormComponent({ isSearch, isSend }: IConditionProps) {
       {isSearch && (
         <Form onSubmit={onSubmitSearch}>
           <InputComponent
-            placeholder="Busque por seu herói..."
-            value={namePerson}
+            placeholder="Busque por seu pokemon..."
+            value={pokemon}
             onClick={() => {
-              setHero(hero);
-              router.push(`/Heroes?name=${namePerson}`);
+              setPokemon(pokemon);
+              router.push(`/pokemon?name=${pokemon}`);
             }}
-            onChange={(e: any) => setNamePerson(e.target.value)}
+            onChange={(e: any) => setPokemon(e.target.value)}
             iconSearch
           />
         </Form>
