@@ -97,6 +97,7 @@ export const interrogation = styled.p`
 
 export const Typography = styled.div`
   width: 200px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +107,7 @@ export const Typography = styled.div`
   border-radius: 20px;
   text-transform: capitalize;
   background-color: white;
-
+line-height: 35px;
   p{
     color: var(--ligth);
   }

@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import * as S from './styles.modal'
 
 export default function Modal({ data, nome, imagem, setOpenModal }: any) {
+    
     return (
         <S.Container>
             <S.Content >
                 {!nome &&
                     <S.Typography>
-                        <p>Nome:{data?.types[0]?.type?.name}</p>
-                        <p>Tipo:{data?.stats[0].base_stat}</p>
+                        <p>Nome:{data?.name}</p>
+                        <p>Tipo:{data?.types[0]?.type?.name}| <span>{data?.types[1]?.type?.name}</span></p>
                         <p>HP:{data?.stats[0].base_stat}</p>
                         <p>Ataque:{data?.stats[1].base_stat}</p>
                         <p>Defesa:{data?.stats[2].base_stat}</p>

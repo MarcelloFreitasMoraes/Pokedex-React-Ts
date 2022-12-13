@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import * as S from './styles.card'
 import axios from "axios";
+import { CardProps } from "./type";
 // import { searchIcon } from "../../utils/icons";
 
-export default function Card({ data }:any) {
+export default function Card({ data }: CardProps) {
     const [poke, setPoke] = useState()
 
     const InfoAllPoke = (url: any) => {
@@ -50,13 +51,12 @@ export default function Card({ data }:any) {
     //     }
     //     return types[0].type.name;
     //   };
-   console.log(call,`call`);
    
     return (
         <>
             <S.Card cor={(typePower(call && call?.types && call?.types[0]?.type?.name))} >
                 <S.Name>{call?.name}</S.Name><br/>
-                {/* <span></span> */}
+                {/* <span>{typeHandler()}</span> */}
                 <S.WidImg>
                 <S.Image src={call?.['sprites']['versions']['generation-v']['black-white']['animated']['front_default']} />
                 {/* <img src={searchIcon(call?.types[0].type.name)} alt="icon" /> */}
