@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Card = styled.div`
   margin: 20px;
   height: 350px;
-  width: 250px;
+  width: 200px;
   border: 5px rgb(49, 102, 177) solid;
   border-radius: 10px;
   display: flex;
@@ -14,11 +14,11 @@ export const Card = styled.div`
   cursor: pointer;
      -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
-  /* :hover {
+  :hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     }
-    overflow: hidden; */
+    overflow: hidden;
 `;
 export const Name = styled.p`
   text-transform: uppercase;
