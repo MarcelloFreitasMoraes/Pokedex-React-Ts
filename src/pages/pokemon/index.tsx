@@ -9,9 +9,9 @@ import { TypographicComponent } from '../../global/components/Typographic';
 
 export default function Pokemon() {
 
+  const [data, setData] = useState([]);
   const [pokemons, setPokemons] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  const [data, setData] = useState([]);
 
   const pokemonLegends = (id: any) => {
     axios
@@ -51,7 +51,7 @@ export default function Pokemon() {
       <Head>
         <title>Pokedex | All Pokemons</title>
       </Head>
-      <HeaderComponent pokemonFilter={pokemonFilter}/>
+      <HeaderComponent pokemonFilter={pokemonFilter} value={pokemons}/>
       <S.GroupLeft>
       <TypographicComponent title="All Pokemons" large />
       </S.GroupLeft>

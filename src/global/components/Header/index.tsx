@@ -6,7 +6,7 @@ import { LogoComponent } from '../Logo'
 
 import { Content } from "./styles";
 
-export function HeaderComponent({pokemonFilter}:any) {
+export function HeaderComponent({pokemonFilter, pokemons}:any) {
   return (
     <Content>
       <div className="container">
@@ -16,10 +16,10 @@ export function HeaderComponent({pokemonFilter}:any) {
           <InputComponent
             placeholder="Busque por seu pokemon..."
             onChange={(e: any) => pokemonFilter(e.target.value)}
-            value={undefined} 
+            value={pokemons} 
             onClick={function (event: FormEvent<Element>): void {
               throw new Error('Function not implemented.');
-            } }          />
+            } }/>
         </Form>
       </div>
     </Content>

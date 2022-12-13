@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Card = styled.div`
   margin: 20px;
   height: 350px;
-  width: 200px;
+  width: 250px;
   border: 5px rgb(49, 102, 177) solid;
   border-radius: 10px;
   display: flex;

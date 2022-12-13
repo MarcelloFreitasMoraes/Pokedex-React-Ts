@@ -38,7 +38,7 @@ const icons = {
    water: water
 } 
 
-export function searchIcon(search){
+export function searchIcon(search: string | any[][]){
    
    if(search){
       search = Object.entries(icons).filter(icon => icon[0] === search);
