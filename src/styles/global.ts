@@ -53,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body {
         width: 100%;
-        max-width: 1920px;
+        //max-width: 1920px;
         background-color: var(--blue-dark);
     }
     textarea, button, select, input, span, a, h1, h2, h3, h4, h5, h6 {
@@ -71,8 +71,8 @@ export const GlobalStyle = createGlobalStyle`
         color: inherit;
     }
     .container {
-        max-width: 1140px;
-        width: 100%;
+        max-width: 1900px;
+        width:85%;
         margin: 0 auto;
         padding: 0 2rem;
     }

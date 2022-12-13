@@ -4,12 +4,9 @@ import * as S from "./styles";
 import { IContentProps } from "./types";
 
 export function InputComponent({
-  onClick,
   onChange,
   placeholder,
-  value,
-  iconSearch,
-  iconSend
+  value, 
 }: IContentProps) {
   const focusInput = useRef<any>(null);
 
@@ -21,21 +18,11 @@ export function InputComponent({
     <S.InputField>
       <input
         type="text"
-        value={value}
         placeholder={placeholder}
         onChange={onChange}
         ref={focusInput}
-      />
-      {iconSearch && (
-        <button type="submit" onClick={onClick}>
-          <S.SearchIcon />
-        </button>
-      )}
-      {iconSend && (
-        <button type="submit" onClick={onClick}>
-          <S.SendIcon />
-        </button>
-      )}
+        value={value}
+      />     
     </S.InputField>
   );
 }

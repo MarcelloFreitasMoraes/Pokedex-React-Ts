@@ -9,37 +9,56 @@ import { TypographicComponent } from '../../global/components/Typographic';
 
 export default function Pokemon() {
 
-  const [data, setData] = useState();
+  const [pokemons, setPokemons] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  const [resposta, setResposta] = useState("");
+  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
-      .then((response) => setData(response.data.results));
-  }, []);
   const pokemonLegends = (id: any) => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((response) => {
-        setResposta(response.data);
+        setData(response.data);
         setOpenModal(true);
       });
   };
 
+  const getPokemons = () =>{
+    axios.get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
+    .then((res) => setPokemons(res.data.results))
+    .catch((err) => console.log(err));
+  }
+
+  useEffect(() =>{
+    getPokemons()
+  },[])
+
+  const pokemonFilter = (name:any) => {
+    
+    if(name === ''){
+      getPokemons()
+    }
+    let filteredPokemons:any = []
+    for(let i in pokemons){
+      //@ts-ignore
+      if(pokemons[i].name.includes(name)){  
+        filteredPokemons.push(pokemons[i])
+      }
+    }
+    setPokemons(filteredPokemons)
+  }
   return (
     <div className='container'>
       <Head>
         <title>Pokedex | All Pokemons</title>
       </Head>
-      <HeaderComponent />
+      <HeaderComponent pokemonFilter={pokemonFilter}/>
       <S.GroupLeft>
       <TypographicComponent title="All Pokemons" large />
       </S.GroupLeft>
       <S.Page>
 
-        {data &&
-          Object.values(data).map((item:any, index:any) => {
+        {pokemons &&
+          Object.values(pokemons).map((item:any, index:any) => {
           return (
             <div key={index} onClick={() => pokemonLegends(item.name)}>
               <Card data={item.url} />
@@ -50,7 +69,7 @@ export default function Pokemon() {
 
       <S.Modal>
         {openModal && (
-          <Modal data={resposta} setOpenModal={setOpenModal} />
+          <Modal data={data} setOpenModal={setOpenModal} />
         )}
       </S.Modal>
     </div >

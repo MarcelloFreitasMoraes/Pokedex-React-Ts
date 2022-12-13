@@ -6,7 +6,7 @@ import { IConditionProps } from "./Input/type";
 
 import { Form } from "./styles";
 
-export function FormComponent({ isSearch }: IConditionProps) {
+export function FormComponent({ isSearch, pokemonFilter }: IConditionProps) {
   const [pokemon, setPokemon] = useState();
   const router = useRouter();
 
@@ -28,7 +28,7 @@ export function FormComponent({ isSearch }: IConditionProps) {
               setPokemon(pokemon);
               router.push(`/pokemon?name=${pokemon}`);
             }}
-            onChange={(e: any) => setPokemon(e.target.value)}
+            onChange={(e: any) => pokemonFilter(e.target.value)}
             iconSearch
           />
         </Form>

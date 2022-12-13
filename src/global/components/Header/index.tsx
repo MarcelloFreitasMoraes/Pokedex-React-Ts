@@ -1,15 +1,26 @@
+import { FormEvent } from 'react';
 import { FormComponent } from '../Form';
+import { InputComponent } from '../Form/Input';
+import { Form } from '../Form/styles';
 import { LogoComponent } from '../Logo'
 
 import { Content } from "./styles";
 
-export function HeaderComponent() {
+export function HeaderComponent({pokemonFilter}:any) {
   return (
     <Content>
       <div className="container">
         <LogoComponent />
 
-        <FormComponent isSearch />
+        <Form>
+          <InputComponent
+            placeholder="Busque por seu pokemon..."
+            onChange={(e: any) => pokemonFilter(e.target.value)}
+            value={undefined} 
+            onClick={function (event: FormEvent<Element>): void {
+              throw new Error('Function not implemented.');
+            } }          />
+        </Form>
       </div>
     </Content>
   );

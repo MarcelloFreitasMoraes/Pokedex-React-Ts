@@ -10,8 +10,8 @@ export const Content = styled.section`
   background-repeat: no-repeat;
   display: flex;
   flex-direction: row;
-  top: 110px;
-  left: 30%;
+  top: 200px;
+  left: 40%;
   width: 700px;
   height: 600px;
   color: black;
