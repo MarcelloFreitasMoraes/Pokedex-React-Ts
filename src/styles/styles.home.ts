@@ -75,6 +75,11 @@ export const GroupRight = styled.section`
         left: -70px;
     }
 
+    img {
+        width: auto;
+        height: auto;
+    }
+
     @media (max-width: 768px) {
         display: none;
     }
@@ -85,6 +90,6 @@ export const ContentSubscribe = styled.div`
         margin-top: 1rem;
     }
 `
-export const Pokeball = styled.div`
+export const Pokeball = styled.span`
     cursor: pointer;
 `

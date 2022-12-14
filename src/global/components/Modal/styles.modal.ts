@@ -54,8 +54,8 @@ export const Modality = styled.p`
 `;
 
 export const Image = styled.img`
-  width: 400px;
-  height: 400px;
+  width: auto;
+  height: auto;
   @media (max-width: 600px) {
     width: 300px;
     height: 350px;
@@ -108,6 +108,7 @@ export const Typography = styled.div`
   text-transform: capitalize;
   background-color: white;
 line-height: 35px;
+
   p{
     color: var(--ligth);
   }

@@ -44,7 +44,7 @@ export default function Pokemon() {
         filteredPokemons.push(pokemons[i])
       }
     }
-    setPokemons(filteredPokemons)
+    setPokemons(filteredPokemons)   
   }
   return (
     <div className='container'>
