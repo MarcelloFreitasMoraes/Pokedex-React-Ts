@@ -94,4 +94,9 @@ export const Pokeball = styled.span`
     cursor: pointer;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
+`
+export const Modal = styled.div`
+    display: flex;
+    justify-content: space-around;
 `

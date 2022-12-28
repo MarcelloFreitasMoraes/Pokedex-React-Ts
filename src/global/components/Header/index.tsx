@@ -18,7 +18,9 @@ export function HeaderComponent({pokemonFilter, pokemons}:any) {
             value={pokemons} 
             onClick={function (event: FormEvent<Element>): void {
               throw new Error('Function not implemented.');
-            } }/>
+            }}
+            iconSearch
+            />
         </Form>
         <S.GroupLeft>
         <TypographicComponent title="All Pokemons" large />

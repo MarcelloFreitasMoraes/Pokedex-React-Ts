@@ -22,7 +22,7 @@ export function FormComponent({ isSearch, pokemonFilter }: IConditionProps) {
       {isSearch && (
         <Form onSubmit={onSubmitSearch}>
           <InputComponent
-            placeholder="Busque por seu pokemon..."
+            placeholder="Search for your pokemon..."
             value={pokemon}
             onClick={() => {
               setPokemon(pokemon);
