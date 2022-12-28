@@ -5,7 +5,7 @@ export const Question = styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
-  background-color: var(--black);
+  background-color: rgb(202 201 201 / 5%);
   width: 100%;
   height: 100%;
   padding-top: 70px;
@@ -24,10 +24,10 @@ height: 50px;
 border-radius: 10px;
 cursor: pointer;
 
-  /* @media (max-width: 600px) {
+  @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
     margin-top: 100px;
-  } */
+  }
 `;
 
