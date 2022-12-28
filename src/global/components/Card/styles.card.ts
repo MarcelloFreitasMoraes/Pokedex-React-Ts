@@ -1,6 +1,8 @@
 import styled from "styled-components";
-
-export const Card = styled.div`
+interface Props { 
+  cor?: any
+}
+export const Card = styled.div<Props>`
   margin: 20px;
   height: 350px;
   width: 250px;
@@ -10,7 +12,7 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: ${(props:any) => props.cor};
+  background-color: ${(props) => props.cor};
   cursor: pointer;
      -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;

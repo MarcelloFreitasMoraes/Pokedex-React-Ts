@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import * as S from "./styles"
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
 import Modal from '../../global/components/Modal'
 import Card from '../../global/components/Card';
 import { HeaderComponent } from '../../global/components/Header';
-import { TypographicComponent } from '../../global/components/Typographic';
 import NotFound from '../../global/components/404';
-//import { Pokeball } from '../../global/components/Loading';
+import  { PokeballMini }  from '../../global/components/Loading';
 
 export default function Pokemon() {
 
@@ -15,6 +14,7 @@ export default function Pokemon() {
   const [pokemons, setPokemons] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
 
   const pokemonLegends = (id: any) => {
     axios
@@ -22,11 +22,11 @@ export default function Pokemon() {
       .then((response) => {
         setData(response.data);
         setOpenModal(true);
+        setLoading(false);
       });
   };
 
   const getPokemons = () => {
-    setLoading(true);
     axios.get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
       .then((res) => {
         setPokemons(res.data.results)
@@ -39,7 +39,7 @@ export default function Pokemon() {
     getPokemons()
   }, [])
 
-  const pokemonFilter = (name: any) => {
+  const pokemonFilter = (name: string) => {
 
     if (name === '') {
       getPokemons()
@@ -53,36 +53,34 @@ export default function Pokemon() {
     }
     setPokemons(filteredPokemons)
   }
-  return (
+
+  if (loading) {
+    return <PokeballMini />;
+  } else if (!pokemons) {
+    return <div></div>;
+  } else {
+    return ( 
+    
     <div className='container'>
       <Head>
         <title>Pokedex | All Pokemons</title>
       </Head>
-      <HeaderComponent pokemonFilter={pokemonFilter} value={pokemons} />
-      <S.GroupLeft>
-        <TypographicComponent title="All Pokemons" large />
-      </S.GroupLeft>
-
-      {/* {loading ? (
-        <Pokeball />
-      ) : (        
-        <> */}
           {pokemons.length > 0 ? (
-            <S.Page>
-              {pokemons &&
-                Object.values(pokemons).map((item: any, index: any) => {
-                  return (
-                    <div key={index} onClick={() => pokemonLegends(item.name)}>
-                      <Card data={item.url} />
-                    </div>
-                  );
-                })}
-            </S.Page>
+      <Fragment>
+      <HeaderComponent pokemonFilter={pokemonFilter} value={pokemons} /><S.Page>
+            {pokemons &&
+              Object.values(pokemons).map((item: any, index: any) => {
+                return (
+                  <div key={index} onClick={() => pokemonLegends(item.name)}>
+                    <Card data={item.url} imageLoading={imageLoading} setImageLoading={setImageLoading} />
+                  </div>
+                );
+              })}
+          </S.Page>
+          </Fragment>
           ) : (
             <NotFound />
-          )}
-        {/* </>
-      )} */}
+          )}   
       <S.Modal>
         {openModal && (
           <Modal data={data} setOpenModal={setOpenModal} />
@@ -90,4 +88,5 @@ export default function Pokemon() {
       </S.Modal>
     </div >
   );
+}
 }

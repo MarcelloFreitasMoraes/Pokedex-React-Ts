@@ -92,4 +92,6 @@ export const ContentSubscribe = styled.div`
 `
 export const Pokeball = styled.span`
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 `

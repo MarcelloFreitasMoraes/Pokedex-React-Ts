@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import * as S from './styles.card'
 import axios from "axios";
 import { CardProps } from "./type";
-// import { searchIcon } from "../../utils/icons";
+import { PokeballMini } from "../Loading";
 
-export default function Card({ data }: CardProps) {
-    const [poke, setPoke] = useState()
+export default function Card({ data, imageLoading, setImageLoading }: CardProps) {
+    const [poke, setPoke] = useState<any>()
 
-    const InfoAllPoke = (url: any) => {
+    const InfoAllPoke = (url: string) => {
         useEffect(() => {
             axios
                 .get(url)
@@ -58,8 +58,10 @@ export default function Card({ data }: CardProps) {
                 <S.Name>{call?.name}</S.Name><br/>
                 {/* <span>{typeHandler()}</span> */}
                 <S.WidImg>
-                <S.Image src={call?.['sprites']['versions']['generation-v']['black-white']['animated']['front_default']} />
-                {/* <img src={searchIcon(call?.types[0].type.name)} alt="icon" /> */}
+                {imageLoading ? <PokeballMini /> : null}
+                <S.Image 
+                onLoad={() => setImageLoading(false)}
+                src={call?.['sprites']['versions']['generation-v']['black-white']['animated']['front_default']} />
                 </S.WidImg>
             </S.Card>
 

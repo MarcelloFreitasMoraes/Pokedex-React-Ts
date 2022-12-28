@@ -1,8 +1,9 @@
 import React from 'react'
+import { IModal } from '../../types/pokemon'
 import NotFound from '../404'
 import * as S from './styles.modal'
 
-export default function Modal({ data, nome, imagem, setOpenModal }: any) {
+export default function Modal({ data, nome, imagem, setOpenModal }: IModal) {
     
     return (
         <S.Container>

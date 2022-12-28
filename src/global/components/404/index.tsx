@@ -8,22 +8,15 @@ import router from 'next/router';
 export default function NotFound() {
 
     return (
-        <S.Question>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            {/* eslint-disable-next-line react/jsx-no-undef */}
-            <div>
-                <Image src={ashNot} alt="Loading" style={{
-                    width: "auto",
-                    height: "300px",
-                    margin: "auto",
-                    display: "block",
-                }} />
-            </div>
-            <div>
-                <TypographicComponent title={'Page does not exist return to home'} large />
+        <S.Question>         
+                <Image 
+                src={ashNot} 
+                alt="Loading" 
+                />
+                <br />
+                <TypographicComponent title={'Page does not exist return to home'} description />
                 <br />
                 <S.Button onClick={() => { router.push('/') }}>Voltar</S.Button>
-            </div>
         </S.Question>
     )
 }

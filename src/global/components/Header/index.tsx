@@ -1,17 +1,16 @@
 import { FormEvent } from 'react';
-import { FormComponent } from '../Form';
 import { InputComponent } from '../Form/Input';
 import { Form } from '../Form/styles';
 import { LogoComponent } from '../Logo'
-
-import { Content } from "./styles";
+import { TypographicComponent } from '../Typographic';
+import * as S from "./styles"
 
 export function HeaderComponent({pokemonFilter, pokemons}:any) {
   return (
-    <Content>
       <div className="container">
+    <S.Content>
+      <S.Group>
         <LogoComponent />
-
         <Form>
           <InputComponent
             placeholder="Busque por seu pokemon..."
@@ -21,7 +20,11 @@ export function HeaderComponent({pokemonFilter, pokemons}:any) {
               throw new Error('Function not implemented.');
             } }/>
         </Form>
+        <S.GroupLeft>
+        <TypographicComponent title="All Pokemons" large />
+      </S.GroupLeft> 
+      </S.Group>
+    </S.Content>
       </div>
-    </Content>
   );
 }
