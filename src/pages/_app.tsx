@@ -2,8 +2,9 @@ import type { AppProps } from 'next/app'
 import { GlobalStyle } from '../styles/global'
 import { useRouter } from 'next/router';
 import { FooterComponent } from '../global/components/Footer';
+import { appWithTranslation} from 'next-i18next'
 
-export default function App({ Component, pageProps }: AppProps) {
+ function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   return (
     <>
@@ -12,4 +13,4 @@ export default function App({ Component, pageProps }: AppProps) {
   <FooterComponent/>
   </>
   )
-}
+} export default appWithTranslation(App)

@@ -10,6 +10,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import Modal from '../global/components/Modal';
 
+export function getStaticProps({locale}:any){
+  return{
+    props: {
+      locale
+    }
+  }
+}
+
 export default function Home() {
 
   const [data, setData] = useState([]);
@@ -24,6 +32,7 @@ export default function Home() {
       })
       .catch(function (error) {
         console.log(error.toJSON());
+        alert("This pokemon doesn't exist!!!");
       });
   };
 

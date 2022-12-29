@@ -13,7 +13,7 @@ export function HeaderComponent({pokemonFilter, pokemons}:any) {
         <LogoComponent />
         <Form>
           <InputComponent
-            placeholder="Busque por seu pokemon..."
+            placeholder="Search for your pokemon..."
             onChange={(e: any) => pokemonFilter(e.target.value)}
             value={pokemons} 
             onClick={function (event: FormEvent<Element>): void {

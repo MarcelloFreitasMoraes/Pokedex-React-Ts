@@ -16,7 +16,7 @@ export default function Pokemon() {
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
 
-  const pokemonLegends = (id: any) => {
+  const pokemonLegends = (id: never[]) => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((response) => {
