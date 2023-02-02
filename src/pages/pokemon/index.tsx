@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import * as S from "./styles"
+import * as S from "../../styles/styles.pokemon"
 import { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
 import Modal from '../../global/components/Modal'
